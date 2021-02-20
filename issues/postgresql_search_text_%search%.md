@@ -1,0 +1,1 @@
+https://www.postgresql.org/docs/12/pgtrgm.html
