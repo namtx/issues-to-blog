@@ -27,3 +27,7 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+
+branding:
+  color: green
+  icon: book
