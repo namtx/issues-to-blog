@@ -1,0 +1,29 @@
+name: 'Issues to blog post action'
+
+description: 'This action tries to convert Github issues into Jekyll blog posts'
+
+inputs:
+  targetRepository:
+    description: 'The repository where to put the blog markdown file'
+    required: true
+
+  targetBranch:
+    description: 'The branch where to put the blog markdown file'
+    required: true
+
+  targetDirectory:
+    description: 'The directory where to put the blog markdown file'
+    required: true
+    default: _posts
+
+  sourceRepository:
+    description: 'The repository where contains issues'
+    required: true
+
+  accessToken:
+    description: 'Access Token is required to push new commit cross Github repositories'
+    required: true
+    
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

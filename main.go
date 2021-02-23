@@ -14,11 +14,11 @@ import (
 )
 
 func main() {
-	accessToken := os.Getenv("ACCESS_TOKEN")
-	sourceRepository := os.Getenv("SOURCE_REPOSITORY")
-	targetRepository := os.Getenv("TARGET_REPOSITORY")
-	targetBranch := os.Getenv("TARGET_BRANCH")
-	targetDirectory := os.Getenv("TARGET_DIRECTORY")
+	accessToken := os.Getenv("INPUT_ACCESSTOKEN")
+	sourceRepository := os.Getenv("INPUT_SOURCEREPOSITORY")
+	targetRepository := os.Getenv("INPUT_TARGETREPOSITORY")
+	targetBranch := os.Getenv("INPUT_TARGETBRANCH")
+	targetDirectory := os.Getenv("INPUT_TARGETDIRECTORY")
 
 	ctx := context.Background()
 	ts := oauth2.StaticTokenSource(
