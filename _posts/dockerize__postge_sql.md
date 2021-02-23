@@ -1,5 +1,10 @@
 
-		```bash
+---
+label: til
+layout: default
+title: Dockerize PostgeSQL
+---
+```bash
 FROM ubuntu                                                                                                                                                                                   
                                                                                                                                                                                               
 RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8                                                                         
@@ -24,4 +29,4 @@ VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
                                                                                                                                                                                               
 CMD ["/usr/lib/postgresql/9.3/bin/postgres", "-D", "/var/lib/postgresql/9.3/main", "-c", "config_file=/etc/postgresql/9.3/main/postgresql.conf"] 
 ```
-	
+

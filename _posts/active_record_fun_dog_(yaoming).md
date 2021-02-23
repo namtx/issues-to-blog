@@ -1,5 +1,10 @@
 
-		## joins
+---
+label: til
+layout: default
+title: ActiveRecord fun dog (yaoming)
+---
+## joins
 ```ruby
 User.joins(:posts)
 #=> Select "users".* FROM "users" INNER JOIN "posts" ON "posts"."user_id" = "users"."id"
@@ -139,4 +144,4 @@ User.group :name
 
 
 
-	
+

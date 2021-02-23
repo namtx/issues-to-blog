@@ -1,5 +1,10 @@
 
-		```ruby
+---
+label: til
+layout: default
+title: super keyword in Ruby's inheritance
+---
+```ruby
 class Animal 
   def initialize name
     @name = name 
@@ -34,4 +39,4 @@ bruno = Dog.new "bruno", "brown"
 p bruno #=> < @name = "bruno", @color = "brown" >
 ```
 
-	
+

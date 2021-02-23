@@ -1,5 +1,10 @@
 
-		```ruby
+---
+label: til
+layout: default
+title: Hash deep compact
+---
+```ruby
 class Hash
   def deep_compact
     delete_if do |_k, v|
@@ -15,4 +20,4 @@ class Hash
   end
 end
 ```
-	
+

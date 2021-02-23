@@ -1,5 +1,10 @@
 
-		```shell
+---
+label: til
+layout: default
+title: Create folder for example coding
+---
+```shell
 for i in {a..z}
 do
   if [ ! -d "$i" ]
@@ -10,4 +15,4 @@ do
 done
 
 ```
-	
+

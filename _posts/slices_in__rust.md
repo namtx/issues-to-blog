@@ -1,5 +1,10 @@
 
-		```rust
+---
+label: til
+layout: default
+title: Slices in Rust
+---
+```rust
 fn main() {
     let s = String::from("hello world");
     let word = first_word(&s[..]);
@@ -18,4 +23,4 @@ fn first_word(s: &str) -> &str {
 }
 
 ```
-	
+

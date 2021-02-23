@@ -1,5 +1,10 @@
 
-		- Install 
+---
+label: til
+layout: default
+title: Install PostgresQL on Ubuntu 16.04
+---
+- Install 
 ```bash
     $ sudo apt-get update
     $ sudo apt-get install postgresql postgresql-contrib
@@ -26,4 +31,4 @@ Input `root`, as superuser
 Now you can access to PostgreSQL by `root` and password `toor`
 
 
-	
+

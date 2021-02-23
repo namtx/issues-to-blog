@@ -1,5 +1,10 @@
 
-		```sql
+---
+label: til
+layout: default
+title: Describe table in PostgresQL 
+---
+```sql
 SELECT 
    table_name, 
    column_name, 
@@ -10,4 +15,4 @@ FROM
 WHERE 
    table_name = 'compensations';
 ```
-	
+

@@ -1,5 +1,10 @@
 
-		When you add `/Users/namtx/workspace/lightning-pocker/lib` to $LOAD_PATH, you can use
+---
+label: til
+layout: default
+title: $LOAD_PATH in Ruby
+---
+When you add `/Users/namtx/workspace/lightning-pocker/lib` to $LOAD_PATH, you can use
 ```ruby
 require 'card'
 ```
@@ -34,4 +39,4 @@ puts $LOAD_PATH
 # /Users/namtx/.rvm/rubies/ruby-2.3.0/lib/ruby/gems/2.3.0/gems/did_you_mean-1.0.0/lib
 # ...
 ```
-	
+

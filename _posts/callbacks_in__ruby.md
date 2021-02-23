@@ -1,5 +1,10 @@
 
-		### Use block 
+---
+label: til
+layout: default
+title: Callbacks in Ruby
+---
+### Use block 
 ```ruby
 def x num 
   yield num
@@ -53,4 +58,4 @@ end
 x(8, A.new) # => 64
 ```
 
-	
+

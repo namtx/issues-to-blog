@@ -1,5 +1,10 @@
 
-		## Page Caching 
+---
+label: til
+layout: default
+title: Caching in Rails 
+---
+## Page Caching 
 The whole `HTML` page is saved to a file inside the `public` directory. On subsequent requests, this file is being sent directly to the user without the need to render the view and layout again.
 
 _Gemfile_
@@ -46,4 +51,4 @@ _pages_controller.rb_
 ```ruby
 expire_page action: 'index'
 ```
-	
+

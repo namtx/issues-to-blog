@@ -1,5 +1,10 @@
 
-		```
+---
+label: til
+layout: default
+title: change postgres password 
+---
+```
 sudo -u postgres psql
 ```
 Then
@@ -11,4 +16,4 @@ Type
 \q
 ```
 to quit.
-	
+

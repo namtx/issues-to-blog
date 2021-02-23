@@ -1,5 +1,10 @@
 
-		```ruby
+---
+label: til
+layout: default
+title: ancestors in Ruby
+---
+```ruby
 module Speak
   def speak sound
     puts "#{sound}"
@@ -37,4 +42,4 @@ Kernel
 BasicObject
 ```
 When function is called on `Dog` or `Human` instance, it will look up on it's `class` first and then it's `module`
-	
+

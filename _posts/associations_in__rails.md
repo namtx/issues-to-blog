@@ -1,5 +1,10 @@
 
-		## self joins
+---
+label: til
+layout: default
+title: associations in Rails
+---
+## self joins
 ```ruby
 class Employee < ApplicationRecord
   has_many :subordinates, class_name: Employee.name, foreign_key: :manager_id
@@ -125,4 +130,4 @@ a.equal? b.writer # true
 
 
 
-	
+

@@ -1,5 +1,10 @@
 
-		![image](https://user-images.githubusercontent.com/25602820/28834793-888f8c20-770d-11e7-8cc7-e911b1647e08.png)
+---
+label: til
+layout: default
+title: References in Rust 
+---
+![image](https://user-images.githubusercontent.com/25602820/28834793-888f8c20-770d-11e7-8cc7-e911b1647e08.png)
 ```rust
 fn main() {
     let s = String::from("hello");
@@ -37,4 +42,4 @@ fn change(some_string: &mut String) {
 }
 // It works like a charm!
 ```
-	
+

@@ -1,5 +1,10 @@
 
-		1. Lookup within singleton class
+---
+label: til
+layout: default
+title: Ruby method lookup path 
+---
+1. Lookup within singleton class
 ```ruby
 class MyCar
   def method
@@ -98,4 +103,4 @@ MyCar.new.method
 # => "defined on MyCar"
 # => "defined on Vehicle"
 ```
-	
+

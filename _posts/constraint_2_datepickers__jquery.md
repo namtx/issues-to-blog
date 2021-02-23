@@ -1,5 +1,10 @@
 
-		```js
+---
+label: til
+layout: default
+title: Constraint 2 datepickers Jquery
+---
+```js
 $('document').ready(function() {
   $('#service_start_date, #service_end_date').datepicker({
     beforeShow: customRange
@@ -18,4 +23,4 @@ function customRange(input) {
   }
 }
 ```
-	
+

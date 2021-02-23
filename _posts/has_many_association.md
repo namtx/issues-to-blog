@@ -1,5 +1,10 @@
 
-		## Methods
+---
+label: til
+layout: default
+title: has_many association
+---
+## Methods
 ```ruby
 class Author < ApplicationRecord
   has_many :books
@@ -75,4 +80,4 @@ irb(main):002:0> a.books.clear
 - `books.where(...)`
 
 
-	
+

@@ -1,5 +1,10 @@
 
-		# Schema Optimization and Indexing
+---
+label: til
+layout: default
+title: MySQL datatypes 
+---
+# Schema Optimization and Indexing
 
 ###  Whole numbers
   ```sql
@@ -30,4 +35,4 @@
   - MySQL uses `DOUBLE` for computations
   - `DECIMAL` require space and computational costs -> use when you need exact results for fractical numbers: ex: storing financial data
 
-	
+

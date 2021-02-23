@@ -1,5 +1,10 @@
 
-		### Long method
+---
+label: til
+layout: default
+title: Code Smell
+---
+### Long method
  + flog
 
 
@@ -134,4 +139,4 @@ Sign that a method contains too much knowledge
 
 ### Callback
 
-	
+

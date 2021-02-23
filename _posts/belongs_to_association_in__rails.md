@@ -1,5 +1,10 @@
 
-		## Methods
+---
+label: til
+layout: default
+title: belongs_to association in Rails
+---
+## Methods
 ```ruby
 class Book < ApplicationRecord
   belongs_to :author
@@ -89,4 +94,4 @@ end
 ### 3. readonly
 ### 4. select
 ## Assign any object to the `belongs_to` association doesn't automatically save the object.
-	
+

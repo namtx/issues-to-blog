@@ -1,5 +1,10 @@
 
-		### add index to column in by migrate
+---
+label: til
+layout: default
+title:  migrate in Rails
+---
+### add index to column in by migrate
 ```yml
 rails g migration add_part_number_to_products part_number:string:index
 ```
@@ -23,4 +28,4 @@ This is migration will create a `user_id` column and appropriate index.
 3. in `create_join_table`:
 `t.index `
   
-	
+
