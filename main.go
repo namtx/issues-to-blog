@@ -85,13 +85,13 @@ func main() {
 			labels = append(labels, Label{Color: *label.Color, Name: *label.Name})
 		}
 		issueDTO.Labels = labels
-		
+
 		entries = append(
-			entries, 
+			entries,
 			&github.TreeEntry{
-				Path: github.String(targetDirectory+"/"+ buildFileName(*issue.CreatedAt, *issue.Title)), 
-				Type: github.String("blob"), 
-				Content: github.String(buildFileContent(issueDTO)), 
+				Path: github.String(targetDirectory+"/"+ buildFileName(*issue.CreatedAt, *issue.Title)),
+				Type: github.String("blob"),
+				Content: github.String(buildFileContent(issueDTO)),
 				Mode: github.String("100644"),
 			},
 		)
@@ -109,14 +109,14 @@ func main() {
 
 	date := time.Now()
 	author := &github.CommitAuthor{
-		Date: &date, 
-		Name: github.String(owner), 
+		Date: &date,
+		Name: github.String(owner),
 		Email: github.String(ownerEmailAddress),
 	}
 	commit := &github.Commit{
-		Author: author, 
-		Message: github.String("issues-to-blog-actions#"+os.Getenv("GITHUB_RUN_NUMBER")), 
-		Tree: tree, 
+		Author: author,
+		Message: github.String("issues-to-blog-actions#"+os.Getenv("GITHUB_RUN_NUMBER")),
+		Tree: tree,
 		Parents: []*github.Commit{parent.Commit},
 	}
 
@@ -130,7 +130,7 @@ func main() {
 }
 
 func buildFileContent(issue Issue) string {
-	templateStr := 
+	templateStr :=
 `---
 layout: post
 label: til
@@ -139,7 +139,7 @@ title: "{{.Title}}"
 
 <p>
   {{range .Labels}}
-  	<span class="issue-label" style="background-color: {{.Color}}">{{.Name}}</span>
+  <span class="issue-label" style="background-color: #{{.Color}}">{{.Name}}</span>
   {{end}}
 </p>
 {{.Body}}
