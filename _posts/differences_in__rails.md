@@ -1,4 +1,5 @@
-## `update_attribute` & `update_attributes`
+
+		## `update_attribute` & `update_attributes`
 - `update_attribute` update single column <> `update_attributes`
 - `update_attribute` will not perform validations <> `update_attributes`
 ## `update_columns` & `update_attributes`
@@ -11,3 +12,4 @@
 ```ruby
 save validate: false
 ```
+	

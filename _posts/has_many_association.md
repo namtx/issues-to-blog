@@ -1,4 +1,5 @@
-## Methods
+
+		## Methods
 ```ruby
 class Author < ApplicationRecord
   has_many :books
@@ -73,3 +74,5 @@ irb(main):002:0> a.books.clear
 - `books.find(...)`
 - `books.where(...)`
 
+
+	

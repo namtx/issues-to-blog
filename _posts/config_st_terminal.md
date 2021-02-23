@@ -1,4 +1,5 @@
-### Step 1 - Clone st repository
+
+		### Step 1 - Clone st repository
 ```shell
 $ git clone https://git.suckless.org/st
 ```
@@ -32,3 +33,4 @@ $ git apply scrollback.patch
 $ sudo make clean install
 ```
 and now you can scroll up or srolldown by `Shift + K` or `Shift + J`
+	

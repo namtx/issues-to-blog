@@ -1,4 +1,5 @@
-### Get the list of available JDKs
+
+		### Get the list of available JDKs
 ```bash
 $ /usr/libexec/java_home -V
 Matching Java Virtual Machines (5):
@@ -20,3 +21,4 @@ OpenJDK Runtime Environment Zulu11.43+55-CA (build 11.0.9.1+1-LTS)
 OpenJDK 64-Bit Server VM Zulu11.43+55-CA (build 11.0.9.1+1-LTS, mixed mode)
 
 ```
+	

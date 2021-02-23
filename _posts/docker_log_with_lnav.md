@@ -1,4 +1,5 @@
-### Redirect Docker Logs to File
+
+		### Redirect Docker Logs to File
 ```bash
 docker log -f [container_id] > docker.log
 ```
@@ -7,3 +8,4 @@ docker log -f [container_id] > docker.log
 ```bash
 lnav docker.log
 ```
+	

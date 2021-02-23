@@ -1,4 +1,5 @@
-1. Lookup within singleton class
+
+		1. Lookup within singleton class
 ```ruby
 class MyCar
   def method
@@ -97,3 +98,4 @@ MyCar.new.method
 # => "defined on MyCar"
 # => "defined on Vehicle"
 ```
+	

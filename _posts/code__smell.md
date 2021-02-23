@@ -1,4 +1,5 @@
-### Long method
+
+		### Long method
  + flog
 
 
@@ -132,3 +133,5 @@ Sign that a method contains too much knowledge
 ### Mixin
 
 ### Callback
+
+	

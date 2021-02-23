@@ -1,4 +1,5 @@
-```ruby
+
+		```ruby
 pets = { cat: "Jess" }
 pets[:dinosaur]
 # => nil
@@ -15,3 +16,4 @@ pets.fetch(:dinosaur, Dinosaur.raise_from_the_dead!)
 
 pets.fetch(:dinosaur) { Dinosaur.raise_from_the_dead! } 
 ```
+	

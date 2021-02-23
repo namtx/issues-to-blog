@@ -1,1 +1,3 @@
-sudo usermod -a -G docker $USER
+
+		sudo usermod -a -G docker $USER
+	

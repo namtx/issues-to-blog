@@ -1,4 +1,5 @@
-clusterip là chuyện map 1 cái svc ip+port ra nhiều pod ip+port
+
+		clusterip là chuyện map 1 cái svc ip+port ra nhiều pod ip+port
 Cái đó tầng trên
 Câu hỏi make sense hơn nếu phrase theo kiểu pod network map ra network ở dưới thế nào
 Cái này tuỳ network ở dưới thế nào
@@ -20,3 +21,4 @@ Nghe nói GCP có
 Còn có kiểu chạy trên L2, ipvlan nhiều IP chung trên 1 cái mac
 Cái này thì chắc cloud không có rồi
 Còn kiểu nhà giàu cho mỗi pod 1 cái eni hoặc physical card luôn
+	

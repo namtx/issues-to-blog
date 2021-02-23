@@ -1,4 +1,5 @@
-## Creating immutable objects
+
+		## Creating immutable objects
 
 > In Ruby constant is mutable
 
@@ -67,3 +68,4 @@ user["name"] #Ruby 2.2
 user["name".freeze] #Ruby 2.1
 ```
 ## Freeze object in `initialize` methods
+	

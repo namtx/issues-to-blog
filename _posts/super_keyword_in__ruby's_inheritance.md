@@ -1,4 +1,5 @@
-```ruby
+
+		```ruby
 class Animal 
   def initialize name
     @name = name 
@@ -32,3 +33,5 @@ end
 bruno = Dog.new "bruno", "brown"
 p bruno #=> < @name = "bruno", @color = "brown" >
 ```
+
+	

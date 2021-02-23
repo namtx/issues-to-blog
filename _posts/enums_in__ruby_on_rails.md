@@ -1,4 +1,5 @@
-Model
+
+		Model
 
 ```ruby
 class Category < ApplicationRecord
@@ -25,3 +26,4 @@ Category.first.category_type
 Category.first.category_type_before_type_cast
 #=> 0
 ```
+	

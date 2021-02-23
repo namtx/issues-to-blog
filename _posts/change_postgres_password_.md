@@ -1,4 +1,5 @@
-```
+
+		```
 sudo -u postgres psql
 ```
 Then
@@ -10,3 +11,4 @@ Type
 \q
 ```
 to quit.
+	

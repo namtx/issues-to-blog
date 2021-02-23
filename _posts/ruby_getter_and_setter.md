@@ -1,4 +1,5 @@
-In `Ruby`, getters and setters are typically defined by using class method `attr_accessor`
+
+		In `Ruby`, getters and setters are typically defined by using class method `attr_accessor`
 ```ruby
 class Foo 
   attr_accessor :bar,  :baz
@@ -25,3 +26,4 @@ end
 ```
 `attr_reader` will define only the getter methods 
 `attr_writer` will define only setter methods 
+	

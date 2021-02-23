@@ -1,4 +1,5 @@
-```ruby
+
+		```ruby
 class Hash
   def deep_compact
     delete_if do |_k, v|
@@ -14,3 +15,4 @@ class Hash
   end
 end
 ```
+	

@@ -1,4 +1,5 @@
-- Install 
+
+		- Install 
 ```bash
     $ sudo apt-get update
     $ sudo apt-get install postgresql postgresql-contrib
@@ -24,3 +25,5 @@ Input `root`, as superuser
 
 Now you can access to PostgreSQL by `root` and password `toor`
 
+
+	

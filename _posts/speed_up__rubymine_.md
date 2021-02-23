@@ -1,4 +1,5 @@
-```ruby
+
+		```ruby
 # ~/Library/Preferences/RubyMine2016.<VERSION>/rubymine.vmoptions
 
 -Xms2g
@@ -8,3 +9,4 @@
 
 # Restart RubyMine
 ```
+	

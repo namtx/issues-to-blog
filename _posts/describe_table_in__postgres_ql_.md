@@ -1,4 +1,5 @@
-```sql
+
+		```sql
 SELECT 
    table_name, 
    column_name, 
@@ -9,3 +10,4 @@ FROM
 WHERE 
    table_name = 'compensations';
 ```
+	

@@ -1,4 +1,5 @@
-# Schema Optimization and Indexing
+
+		# Schema Optimization and Indexing
 
 ###  Whole numbers
   ```sql
@@ -28,3 +29,5 @@
   - Floating-point types typically use less space than `DECIMAL`, `FLOAT` use 4 bytes, `DOUBLE` uses 8 bytes.
   - MySQL uses `DOUBLE` for computations
   - `DECIMAL` require space and computational costs -> use when you need exact results for fractical numbers: ex: storing financial data
+
+	

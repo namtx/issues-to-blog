@@ -1,4 +1,5 @@
-Làm thế nào để lazy load img?
+
+		Làm thế nào để lazy load img?
 What: lazy load nghĩa là mình không load resource nào đó trước khi mình thật sự cần đến chúng.
 Why: Page load time tốt hơn, tiết kiệm được bandwidth, trải nghiệm người dùng mượt hơn.
 How:
@@ -12,3 +13,4 @@ No javascript: Lưu ý cần cung cấp fallback (noscript) trong trường hợ
 <br>
 
 Source: Webuild
+	

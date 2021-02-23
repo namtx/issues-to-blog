@@ -1,4 +1,5 @@
-https://stackoverflow.com/a/34613607/3898402
+
+		https://stackoverflow.com/a/34613607/3898402
 In this example,
 
 ```var a = {address: {postcode: 5085}}
@@ -26,3 +27,4 @@ console.log(JSON.stringify(b));   //Outputs {"address":{"postcode":5085}}
 From the above example you can clearly know how fromJS makes the nested members immutable.
 
 I hope you understood the difference between Map and FromJS. All the best =)
+	

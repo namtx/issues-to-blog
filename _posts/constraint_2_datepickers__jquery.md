@@ -1,4 +1,5 @@
-```js
+
+		```js
 $('document').ready(function() {
   $('#service_start_date, #service_end_date').datepicker({
     beforeShow: customRange
@@ -17,3 +18,4 @@ function customRange(input) {
   }
 }
 ```
+	

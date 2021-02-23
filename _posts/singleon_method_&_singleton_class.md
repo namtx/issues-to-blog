@@ -1,4 +1,5 @@
-## Singleton method 
+
+		## Singleton method 
 is method is defined for only one instance
 ```ruby
 class Foo
@@ -31,3 +32,4 @@ foo == foo1 #=> true
 
 Foo.new #=> Runtime Error
 ```
+	
