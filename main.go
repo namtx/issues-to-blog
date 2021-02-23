@@ -142,7 +142,7 @@ title: "{{.Title}}"
   	<span class="issue-label" style="background-color: {{.Color}}">{{.Name}}</span>
   {{end}}
 </p>
-{{.Content}}
+{{.Body}}
 `
 
 	tmpl, err := template.New("template").Parse(templateStr)
