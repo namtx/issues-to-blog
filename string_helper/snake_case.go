@@ -1,4 +1,4 @@
-package helper
+package string_helper
 
 import (
 	"regexp"

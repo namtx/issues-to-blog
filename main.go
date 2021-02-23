@@ -1,22 +1,24 @@
 package main
 
 import (
+	"bytes"
 	"context"
+	"fmt"
+	"os"
+	"text/template"
 	"time"
 
 	"github.com/google/go-github/v32/github"
-	"github.com/namtx/issues-to-blog/helper"
+	helper "github.com/namtx/issues-to-blog/string_helper"
 	"golang.org/x/oauth2"
 )
 
 func main() {
-	accessToken := "33871a9f95079a27b2f395e3e57010cb948b826d"
-	owner := "namtx"
-	sourceRepository := "til"
-	targetRepository := "issues-to-blog"
-	targetBranch := "main"
-	targetDirectory := "issues"
-	ownerEmailAddress := "namtx.93@gmail.com"
+	accessToken := os.Getenv("ACCESS_TOKEN")
+	sourceRepository := os.Getenv("SOURCE_REPOSITORY")
+	targetRepository := os.Getenv("TARGET_REPOSITORY")
+	targetBranch := os.Getenv("TARGET_BRANCH")
+	targetDirectory := os.Getenv("TARGET_DIRECTORY")
 
 	ctx := context.Background()
 	ts := oauth2.StaticTokenSource(
@@ -25,7 +27,12 @@ func main() {
 	tc := oauth2.NewClient(ctx, ts)
 	client := github.NewClient(tc)
 
-	
+	user, _, err := client.Users.Get(ctx, "")
+	if (err != nil) {
+		panic(err.Error())
+	}
+	owner := *user.Login
+	ownerEmailAddress := *user.Email
 
 	refs, _, err := client.Git.GetRef(ctx, owner, targetRepository, "refs/heads/"+targetBranch)
 	if (err != nil) {
@@ -33,16 +40,41 @@ func main() {
 	}
 	entries := []*github.TreeEntry{}
 
-	issues, _, err := client.Issues.ListByRepo(ctx, owner, sourceRepository, nil)
+	options := &github.IssueListByRepoOptions{
+		ListOptions: github.ListOptions {
+			Page: 1,
+			PerPage: 50,
+		},
+	}
+	issues, response, err := client.Issues.ListByRepo(ctx, owner, sourceRepository, options)
 	if (err != nil) {
 		panic(err.Error())
 	}
+	for (response.NextPage != 0) {
+		options = &github.IssueListByRepoOptions {
+			ListOptions: github.ListOptions {
+				Page: response.NextPage,
+				PerPage: 50,
+			},
+		}
+		nextIssues, nextResponse, err := client.Issues.ListByRepo(ctx, owner, sourceRepository, options)
+		if (err != nil) {
+			panic(err.Error())
+		}
+		response = nextResponse
+		issues = append(issues, nextIssues...)
+	}
 	for _, issue := range issues {
+		config := map[string]string{
+			"Content": *issue.Body,
+			"Title": *issue.Title,
+		}
 		entries = append(
 			entries, 
 			&github.TreeEntry{
-				Path: github.String(targetDirectory+"/"+ helper.ToSnakeCase(helper.TrimSpecial(*issue.Title))+".md"), 
-				Type: github.String("blob"), Content: github.String(*issue.Body), 
+				Path: github.String(targetDirectory+"/"+ buildFileName(*issue.CreatedAt, *issue.Title)), 
+				Type: github.String("blob"), 
+				Content: github.String(buildFileContent(config)), 
 				Mode: github.String("100644"),
 			},
 		)
@@ -66,7 +98,7 @@ func main() {
 	}
 	commit := &github.Commit{
 		Author: author, 
-		Message: github.String(""), 
+		Message: github.String("issues-to-blog-actions#"+os.Getenv("GITHUB_RUN_NUMBER")), 
 		Tree: tree, 
 		Parents: []*github.Commit{parent.Commit},
 	}
@@ -78,4 +110,29 @@ func main() {
 	if (err != nil) {
 		panic(err.Error())
 	}
+}
+
+func buildFileContent(config map[string]string) string {
+	templateStr := 
+`---
+layout: post
+label: til
+title: "{{.Title}}"
+---
+
+{{.Content}}
+`
+
+	tmpl, err := template.New("template").Parse(templateStr)
+	if (err != nil) {
+		panic(err.Error())
+	}
+	buf := bytes.NewBufferString("")
+	err = tmpl.Execute(buf, config)
+
+	return fmt.Sprintln(buf)
+}
+
+func buildFileName(createdAt time.Time, title string) string {
+	return fmt.Sprintf("%d-%d-%d-%s.md", createdAt.Year(), createdAt.Month(), createdAt.Day(), helper.ToSnakeCase(helper.TrimSpecial(title)))
 }
