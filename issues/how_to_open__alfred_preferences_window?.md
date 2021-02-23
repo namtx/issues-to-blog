@@ -1,1 +1,0 @@
-`⌘ + , ` to open Alfred preferences window 
