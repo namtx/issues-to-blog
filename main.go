@@ -13,6 +13,17 @@ import (
 	"golang.org/x/oauth2"
 )
 
+type Label struct {
+	Name string
+	Color string
+}
+
+type Issue struct {
+	Title string
+	Body string
+	Labels []Label
+}
+
 func main() {
 	accessToken := os.Getenv("INPUT_ACCESSTOKEN")
 	sourceRepository := os.Getenv("INPUT_SOURCEREPOSITORY")
@@ -65,16 +76,22 @@ func main() {
 		issues = append(issues, nextIssues...)
 	}
 	for _, issue := range issues {
-		config := map[string]string{
-			"Content": *issue.Body,
-			"Title": *issue.Title,
+		issueDTO := Issue {
+			Body: *issue.Body,
+			Title: *issue.Title,
 		}
+		labels := []Label{}
+		for _, label := range issue.Labels {
+			labels = append(labels, Label{Color: *label.Color, Name: *label.Name})
+		}
+		issueDTO.Labels = labels
+		
 		entries = append(
 			entries, 
 			&github.TreeEntry{
 				Path: github.String(targetDirectory+"/"+ buildFileName(*issue.CreatedAt, *issue.Title)), 
 				Type: github.String("blob"), 
-				Content: github.String(buildFileContent(config)), 
+				Content: github.String(buildFileContent(issueDTO)), 
 				Mode: github.String("100644"),
 			},
 		)
@@ -112,7 +129,7 @@ func main() {
 	}
 }
 
-func buildFileContent(config map[string]string) string {
+func buildFileContent(issue Issue) string {
 	templateStr := 
 `---
 layout: post
@@ -120,6 +137,11 @@ label: til
 title: "{{.Title}}"
 ---
 
+<p>
+  {{range .Labels}}
+  	<span class="issue-label" style="background-color: {{.Color}}">{{.Name}}</span>
+  {{end}}
+</p>
 {{.Content}}
 `
 
@@ -128,7 +150,7 @@ title: "{{.Title}}"
 		panic(err.Error())
 	}
 	buf := bytes.NewBufferString("")
-	err = tmpl.Execute(buf, config)
+	err = tmpl.Execute(buf, issue)
 
 	return fmt.Sprintln(buf)
 }
