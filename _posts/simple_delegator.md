@@ -1,0 +1,1 @@
+https://hashrocket.com/blog/posts/using-simpledelegator-for-your-decorators
