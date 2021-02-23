@@ -31,9 +31,9 @@ steps:
   - name: Issues to blog post action
     uses: namtx/issues-to-blog@0.0.2
       with:
-	targetRepository: thinkspace
-	targetBranch: master
-	targetDirectory: _posts
-	sourceRepository: til
-	accessToken: ${{ secrets.ACCESS_TOKEN }}
+        targetRepository: thinkspace
+        targetBranch: master
+        targetDirectory: _posts
+        sourceRepository: til
+        accessToken: ${{ secrets.ACCESS_TOKEN }}
 ```
