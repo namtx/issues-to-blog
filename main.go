@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"net/url"
 	"os"
 	"text/template"
 	"time"
@@ -156,5 +157,5 @@ title: "{{.Title}}"
 }
 
 func buildFileName(createdAt time.Time, title string) string {
-	return fmt.Sprintf("%d-%d-%d-%s.md", createdAt.Year(), createdAt.Month(), createdAt.Day(), helper.ToSnakeCase(helper.TrimSpecial(title)))
+	return fmt.Sprintf("%d-%d-%d-%s.md", createdAt.Year(), createdAt.Month(), createdAt.Day(), url.QueryEscape(title))
 }
