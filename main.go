@@ -10,7 +10,6 @@ import (
 	"time"
 
 	"github.com/google/go-github/v32/github"
-	helper "github.com/namtx/issues-to-blog/string_helper"
 	"golang.org/x/oauth2"
 )
 
